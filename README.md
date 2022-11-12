@@ -436,6 +436,40 @@ class Solution {
 }
 ```
 
+### Binary Tree Inorder Traversal - https://leetcode.com/problems/binary-tree-inorder-traversal/description/
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> solList = new LinkedList<Integer>();
+        traverse(root, solList);
+        return solList;
+    }
+
+    private void traverse (TreeNode node, List<Integer> solList) {
+        if(node != null) {
+            traverse(node.left, solList);
+            solList.add(node.val);
+            traverse(node.right, solList);
+        }
+    }
+}
+```
+
 ## MEDIUM
 
 ### Delete Nth last node - https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/
@@ -954,6 +988,46 @@ class Solution {
             if(s.charAt(low++) != s.charAt(high--)) return false;
         }
         return true;
+    }
+}
+```
+
+### Binary Tree Level Order Traversal - https://leetcode.com/problems/binary-tree-level-order-traversal/description/
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    List<List<Integer>> solList = new ArrayList<List<Integer>>();
+
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        if(root == null) return this.solList;
+
+        traverse(root, 1);
+        return this.solList;
+    }
+
+    public void traverse(TreeNode node, int level){
+        if(this.solList.size() < level){
+            // this level has not been reached yet
+            this.solList.add(new LinkedList<Integer>());
+        }
+        this.solList.get(level - 1).add(node.val);
+
+        if(node.left != null) traverse(node.left, level + 1);
+        if(node.right != null) traverse(node.right, level + 1);
     }
 }
 ```
