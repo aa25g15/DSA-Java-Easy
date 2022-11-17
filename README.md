@@ -42,26 +42,6 @@ public int romanToInt(String s) {
 }
 ```
 
-### Remove Duplicates in Sorted Array - https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
-
-
-2 pointers:
-```java
-class Solution {
-    public int removeDuplicates(int[] A) {
-       if(A.length == 0) return 0;
-
-       int j = 0; // slow pointer
-
-       for(int i = 0; i < A.length; i++) { // fast pointer
-           if(A[i] != A[j]) A[++j] = A[i];
-       }
-
-       return j + 1;
-    }
-}
-```
-
 ### 2. Delete Node in Linked List - https://leetcode.com/problems/delete-node-in-a-linked-list
 
 Linked list:
@@ -568,6 +548,25 @@ class Solution {
             }
         }
         return sol;
+    }
+}
+```
+
+### 18. Remove Duplicates in Sorted Array - https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
+
+2 pointers:
+```java
+class Solution {
+    public int removeDuplicates(int[] A) {
+       if(A.length == 0) return 0;
+
+       int j = 0; // slow pointer
+
+       for(int i = 0; i < A.length; i++) { // fast pointer
+           if(A[i] != A[j]) A[++j] = A[i];
+       }
+
+       return j + 1;
     }
 }
 ```
