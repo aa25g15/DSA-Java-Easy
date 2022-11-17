@@ -542,3 +542,36 @@ class Solution {
     }
 }
 ```
+
+### Two Sum - https://leetcode.com/problems/two-sum/description/
+```java
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        HashMap<Integer, ArrayList<Integer>> map = new HashMap<>();
+        for(int i = 0; i < nums.length; i++){
+            if(map.containsKey(nums[i])){
+                map.get(nums[i]).add(i);
+            } else {
+                ArrayList<Integer> newList = new ArrayList<Integer>();
+                newList.add(i);
+                map.put(nums[i], newList);
+            }
+        }
+
+        for(int i = 0; i < nums.length; i++) {
+            int valToFind = target - nums[i];
+            if(map.containsKey(valToFind)){
+                ArrayList<Integer> list = map.get(valToFind);
+                ListIterator<Integer> iterator = list.listIterator();
+                while(iterator.hasNext()){
+                    int val = iterator.next();
+                    if(val != i){
+                        return new int[] {i, val};
+                    }
+                }
+            }
+        }
+        return null;
+    }
+}
+```
