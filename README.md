@@ -2,7 +2,7 @@
 
 ## EASY
 
-### Roman to Integer - https://leetcode.com/problems/roman-to-integer
+### 1. Roman to Integer - https://leetcode.com/problems/roman-to-integer
 ```java
 public int romanToInt(String s) {
     int nums[]=new int[s.length()];
@@ -62,7 +62,7 @@ class Solution {
 }
 ```
 
-### Delete Node in Linked List - https://leetcode.com/problems/delete-node-in-a-linked-list
+### 2. Delete Node in Linked List - https://leetcode.com/problems/delete-node-in-a-linked-list
 
 Linked list:
 ```java
@@ -76,7 +76,7 @@ public class Solution {
 }
 ```
 
-### Reverse Linked List - https://leetcode.com/problems/reverse-linked-list/description/
+### 3. Reverse Linked List - https://leetcode.com/problems/reverse-linked-list/description/
 
 Linked list:
 ```java
@@ -111,7 +111,7 @@ class Solution {
 }
 ```
 
-### Binary Search - https://leetcode.com/problems/binary-search
+### 4. Binary Search - https://leetcode.com/problems/binary-search
 
 Binary search:
 ```java
@@ -136,7 +136,7 @@ class Solution {
 }
 ```
 
-### Arrange Coins in Stairs - https://leetcode.com/problems/arranging-coins/description/
+### 5. Arrange Coins in Stairs - https://leetcode.com/problems/arranging-coins/description/
 
 Recursion:
 ```java
@@ -158,7 +158,7 @@ class Solution {
 }
 ```
 
-### Longest Substring Without Repeating Characters - https://leetcode.com/problems/longest-substring-without-repeating-characters
+### 6. Longest Substring Without Repeating Characters - https://leetcode.com/problems/longest-substring-without-repeating-characters
 
 Slow and fast pointer solution:
 ```java
@@ -207,7 +207,7 @@ public int lengthOfLongestSubstring(String s) {
 }
 ```
 
-### Intersection of 2 Arrays - https://leetcode.com/problems/intersection-of-two-arrays
+### 7. Intersection of 2 Arrays - https://leetcode.com/problems/intersection-of-two-arrays
 
 My solution:
 ```java
@@ -239,7 +239,7 @@ class Solution {
 }
 ```
 
-### Valid Parentheses - https://leetcode.com/problems/valid-parentheses/
+### 8. Valid Parentheses - https://leetcode.com/problems/valid-parentheses/
 
 Stacks:
 ```java
@@ -292,7 +292,7 @@ class Solution {
 }
 ```
 
-### Fibonacci Number - https://leetcode.com/problems/fibonacci-number
+### 9. Fibonacci Number - https://leetcode.com/problems/fibonacci-number
 
 Recursion:
 ```java
@@ -308,7 +308,7 @@ class Solution
 }
 ```
 
-### Climbing Stairs - https://leetcode.com/problems/climbing-stairs/
+### 10. Climbing Stairs - https://leetcode.com/problems/climbing-stairs/
 
 My solution but it exceeds the time limit but still works for most test cases:
 ```java
@@ -361,7 +361,7 @@ class Solution {
 }
 ```
 
-### Preorder Traversal - https://leetcode.com/problems/binary-tree-preorder-traversal/description/
+### 11. Preorder Traversal - https://leetcode.com/problems/binary-tree-preorder-traversal/description/
 
 Trees:
 ```java
@@ -381,7 +381,7 @@ private void dfs(TreeNode root, List<Integer> ret) {
 }
 ```
 
-### Max Depth of Binary Tree - https://leetcode.com/problems/maximum-depth-of-binary-tree/description/
+### 12. Max Depth of Binary Tree - https://leetcode.com/problems/maximum-depth-of-binary-tree/description/
 
 Trees:
 ```java
@@ -405,7 +405,7 @@ class Solution {
 }
 ```
 
-### Flood Fill - https://leetcode.com/problems/flood-fill/description/
+### 13. Flood Fill - https://leetcode.com/problems/flood-fill/description/
 ```java
 class Solution {
     public int[][] floodFill(int[][] image, int sr, int sc, int color) {
@@ -436,7 +436,7 @@ class Solution {
 }
 ```
 
-### Binary Tree Inorder Traversal - https://leetcode.com/problems/binary-tree-inorder-traversal/description/
+### 14. Binary Tree Inorder Traversal - https://leetcode.com/problems/binary-tree-inorder-traversal/description/
 ```java
 /**
  * Definition for a binary tree node.
@@ -470,7 +470,7 @@ class Solution {
 }
 ```
 
-### Binary Tree Postorder Traversal - https://leetcode.com/problems/binary-tree-postorder-traversal/description/
+### 15. Binary Tree Postorder Traversal - https://leetcode.com/problems/binary-tree-postorder-traversal/description/
 ```java
 /**
  * Definition for a binary tree node.
@@ -504,7 +504,7 @@ class Solution {
 }
 ```
 
-### Search in a Binary Search Tree = https://leetcode.com/problems/search-in-a-binary-search-tree/description/
+### 16. Search in a Binary Search Tree = https://leetcode.com/problems/search-in-a-binary-search-tree/description/
 ```java
 /**
  * Definition for a binary tree node.
@@ -543,7 +543,7 @@ class Solution {
 }
 ```
 
-### Two Sum - https://leetcode.com/problems/two-sum/description/
+### 17. Two Sum - https://leetcode.com/problems/two-sum/description/
 ```java
 import java.util.Map;
 
