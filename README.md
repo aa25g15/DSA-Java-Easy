@@ -570,3 +570,36 @@ class Solution {
     }
 }
 ```
+
+### 19. Linked List Cycle - https://leetcode.com/problems/linked-list-cycle/description/
+```java
+/**
+ * Definition for singly-linked list.
+ * class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) {
+ *         val = x;
+ *         next = null;
+ *     }
+ * }
+ */
+public class Solution {
+    public boolean hasCycle(ListNode head) {
+        if(head == null) return false;
+
+        HashSet<ListNode> set = new HashSet<>();
+
+        ListNode currentNode = head;
+        while(currentNode.next != null){
+            set.add(currentNode);
+            if(set.contains(currentNode.next)){
+                // We have visited the next node before, cycle!
+                return true;
+            }
+            currentNode = currentNode.next;
+        }
+        return false;
+    }
+}
+```
