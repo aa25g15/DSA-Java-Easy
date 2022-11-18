@@ -604,7 +604,7 @@ public class Solution {
 }
 ```
 
-### Contains Duplicate - https://leetcode.com/problems/contains-duplicate/description/
+### 20. Contains Duplicate - https://leetcode.com/problems/contains-duplicate/description/
 ```java
 class Solution {
     public boolean containsDuplicate(int[] nums) {
