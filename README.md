@@ -603,3 +603,21 @@ public class Solution {
     }
 }
 ```
+
+### Contains Duplicate - https://leetcode.com/problems/contains-duplicate/description/
+```java
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        HashSet<Integer> set = new HashSet<>();
+
+        for(int i = 0; i < nums.length; i++){
+            if(set.contains(nums[i])){
+                // We have seen this before, duplicate!
+                return true;
+            }
+            set.add(nums[i]);
+        }
+        return false;
+    }
+}
+```
