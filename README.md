@@ -621,3 +621,48 @@ class Solution {
     }
 }
 ```
+
+### 21. Same Tree - https://leetcode.com/problems/same-tree/description/
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public boolean isSameTree(TreeNode p, TreeNode q) {
+        return compareNodes(p, q);
+    }
+
+    private boolean compareNodes(TreeNode tree1Node, TreeNode tree2Node){
+        if(tree1Node == null && tree2Node == null){
+            return true;
+        }
+
+        if(
+            (tree1Node == null && tree2Node != null) ||
+            (tree1Node != null && tree2Node == null)
+        ){
+            return false;
+        }
+
+        if(tree1Node.val == tree2Node.val){
+            // Both are same till now, go deeper
+            return compareNodes(tree1Node.left, tree2Node.left) &&
+            compareNodes(tree1Node.right, tree2Node.right);
+        }
+
+        return false;
+    }
+}
+```
