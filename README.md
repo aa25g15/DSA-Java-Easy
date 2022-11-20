@@ -666,3 +666,28 @@ class Solution {
     }
 }
 ```
+
+### Valid Anagram - https://leetcode.com/problems/valid-anagram/description/
+```java
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        int[] charNums = new int[26];
+
+        for(int i = 0; i < s.length(); i++){
+            charNums[(int)(s.charAt(i) - 'a')]++;
+        }
+
+        for(int i = 0; i < t.length(); i++){
+            charNums[(int)(t.charAt(i) - 'a')]--;
+        }
+
+        for(int i = 0; i < charNums.length; i++){
+            if(charNums[i] != 0){
+                return false;
+            }
+        }
+
+        return true;
+    }
+}
+```
