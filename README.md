@@ -667,7 +667,7 @@ class Solution {
 }
 ```
 
-### Valid Anagram - https://leetcode.com/problems/valid-anagram/description/
+### 22. Valid Anagram - https://leetcode.com/problems/valid-anagram/description/
 ```java
 class Solution {
     public boolean isAnagram(String s, String t) {
