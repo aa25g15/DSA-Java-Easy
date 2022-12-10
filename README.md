@@ -694,47 +694,46 @@ class Solution {
 }
 ```
 
-### 23. 3Sum - https://leetcode.com/problems/3sum/description/
+### 23. Merged 2 Sorted LinkedLists - https://leetcode.com/problems/merge-two-sorted-lists/description/
 ```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
 class Solution {
-    public List<List<Integer>> threeSum(int[] nums) {
-        return solve(nums, 0);
+    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+        if(list1 == null){
+            return list2;
+        }
+        if(list2 == null){
+            return list1;
+        }
+        buildMergedList(
+            list1.val <= list2.val ? list1 : list2,
+            list1.val <= list2.val ? list2 : list1
+        );
+        
+        return list1.val <= list2.val ? list1 : list2;
     }
 
-    private List<List<Integer>> solve(int[] nums, int target){
-        HashSet<List<Integer>> set = new HashSet<>();
-        Arrays.sort(nums);
-
-        for(int i = 0; i < nums.length - 2; i++){
-            int j = i + 1;
-            int k = nums.length - 1;
-
-            while(j < k){
-                int sum = nums[i] + nums[j] + nums[k];
-
-                if(sum == target){
-                    List<Integer> sol = new LinkedList<>();
-                    sol.add(nums[i]);
-                    sol.add(nums[j++]);
-                    sol.add(nums[k--]);
-                    set.add(sol);
-                    continue;
-                }
-
-                if(sum < target){
-                    // We are less than target, array is sorted, we need to increase sum
-                    j++;
-                    continue;
-                }
-
-                if(sum > target){
-                    // We are more than target, array is sorted, we need to reduce sum
-                    k--;
-                }
-            }
+    private void buildMergedList(ListNode currentMergedNode, ListNode comparisonNode){
+        if(currentMergedNode == null || comparisonNode == null){
+            return;
         }
 
-        return new ArrayList<>(set);
+        if(currentMergedNode.next != null && currentMergedNode.next.val <= comparisonNode.val){
+            buildMergedList(currentMergedNode.next, comparisonNode);
+        } else {
+            ListNode temp = currentMergedNode.next;
+            currentMergedNode.next = comparisonNode;
+            buildMergedList(currentMergedNode.next, temp);
+        }
     }
 }
 ```
