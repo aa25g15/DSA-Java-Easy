@@ -773,3 +773,58 @@ class Solution {
     }
 }
 ```
+
+### 25. Subtree of Another Tree - https://leetcode.com/problems/subtree-of-another-tree/description/
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public boolean isSubtree(TreeNode root, TreeNode subRoot) {
+        return traverseMainTree(root, subRoot);
+    }
+
+    private boolean traverseMainTree(TreeNode node, TreeNode subRoot){
+        if(node == null){
+            return false;
+        }
+        if(node.val == subRoot.val){
+            // Root nodes are same, we should check the rest of the subtree
+            if(checkSubTree(node, subRoot)){
+                return true;
+            }
+        }
+        // Keep finding the subtree
+        return traverseMainTree(node.left, subRoot) ||
+        traverseMainTree(node.right, subRoot);
+    }
+
+    private boolean checkSubTree(TreeNode mainNode, TreeNode subNode){
+        if(mainNode == null && subNode == null){
+            // Reached the end, no violations
+            return true;
+        }
+        if(
+            (mainNode == null && subNode != null) ||
+            (mainNode != null && subNode == null) ||
+            (mainNode.val != subNode.val)
+        ){
+            return false;
+        }
+        return checkSubTree(mainNode.left, subNode.left) &&
+        checkSubTree(mainNode.right, subNode.right);
+    }
+}
+```
