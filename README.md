@@ -861,3 +861,23 @@ class KthLargest {
  * int param_1 = obj.add(val);
  */
 ```
+
+### 27. Best Time to Buy And Sell Stock - https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
+
+* Iterate over prices array, store minimum price and store max profit while iterating, return max profit
+* The most difficult part about this question is understanding that this approach covers all cases
+```java
+class Solution {
+    public int maxProfit(int[] prices) {
+        int minPrice = Integer.MAX_VALUE;
+        int max = 0;
+
+        for(int i = 0; i < prices.length; i++){
+            minPrice = Math.min(minPrice, prices[i]);
+            max = Math.max(max, prices[i] - minPrice);
+        }
+
+        return max;
+    }
+}
+```
